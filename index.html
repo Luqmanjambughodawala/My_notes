@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            padding: 14px 20px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            transition: 0.3s;
+        }
+
+        .content {
+            padding: 1rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .notes-section {
+            display: none;
+        }
+
+        .notes-section.active {
+            display: block;
+        }
+
+        .note {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .note:hover {
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Study Notes</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('physics')">Physics</a>
+        <a href="#" onclick="showSection('chemistry')">Chemistry</a>
+        <a href="#" onclick="showSection('maths')">Maths</a>
+    </nav>
+    <div class="content">
+        <!-- Physics Section -->
+        <div id="physics" class="notes-section">
+            <h2>Physics Notes</h2>
+            <div class="note" onclick="redirectTo('physics/chapter1.html')">
+                Chapter 1: Sample Physics Chapter
+            </div>
+        </div>
+        <!-- Chemistry Section -->
+        <div id="chemistry" class="notes-section">
+            <h2>Chemistry Notes</h2>
+            <div class="note" onclick="redirectTo('chemistry/chapter1.html')">
+                Chapter 1: Sample Chemistry Chapter
+            </div>
+        </div>
+        <!-- Maths Section -->
+        <div id="maths" class="notes-section">
+            <h2>Maths Notes</h2>
+            <div class="note" onclick="redirectTo('maths/chapter1.html')">
+                Chapter 1: Sample Maths Chapter
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Luqman's Study Notes</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.notes-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+        function rediretTo(url) {
+          window.location.href = url;
+        }
+       
+    </script>
+</body>
+</html>
